@@ -5,7 +5,7 @@ class BetterSorry implements State
 	private byte[] value;
 	private byte maxval;
 
-	ReentrantLock lock;
+	private ReentrantLock lock;
 	
 	BetterSorry(byte[] v)
 	{

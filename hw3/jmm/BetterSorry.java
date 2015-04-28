@@ -1,43 +1,44 @@
-import java.util.concurrent.atomic.AtomicIntegerArray;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class BetterSafe implements State {
-	private AtomicIntegerArray value;
+	private AtomicInteger[] value;
 	private byte maxval;
 
 	BetterSafe(byte[] v) {
-		int[] temp = new int[v.length];
+		AtomicInteger[] temp = new AtomicInteger[v.length];
 		for (int i=0; i < v.length; i++) {
-			temp[i] = v[i];
+			temp[i] = new AtomicInteger(v[i]);
 		}
-		value = new AtomicIntegerArray(temp);
+		value = temp;
 		maxval = 127;
 	}
 
 	BetterSafe(byte[] v, byte m) {
-		int[] temp = new int[v.length];
-        for (int i = 0 ; i < v.length; i++)
-			temp[i] = v[i];
-		value = new AtomicIntegerArray(temp);
+		AtomicInteger[] temp = new AtomicInteger[v.length];
+		for (int i=0; i < v.length; i++) {
+			temp[i] = new AtomicInteger(v[i]);
+		}
+		value = temp;
 		maxval = m;
 	}
 
-	public int size() { return value.length(); }
+	public int size() { return value.length; }
 
     public byte[] current() {
-    	byte[] temp = new byte[value.length()];
-    	for (int i = 0; i < value.length(); i++)
-    		temp[i] = (byte) value.get(i);
+    	byte[] temp = new byte[value.length];
+    	for (int i = 0; i < value.length; i++)
+    		temp[i] = (byte) value[i].get();
     	return temp; 
  	}
 
     public boolean swap(int i, int j) {
 		
-		if (value.get(i) <= 0 || value.get(j) >= maxval) {
+		if (value[i].get() <= 0 || value[j].get() >= maxval) {
 		    return false;
 		}
 		
-		value.getAndDecrement(i);
-		value.getAndIncrement(j);
+		value[i].getAndDecrement();
+		value[j].getAndIncrement();
 		return true;
     }	
 
