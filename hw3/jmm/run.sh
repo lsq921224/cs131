@@ -1,4 +1,6 @@
 #!/bin/sh
+javac BetterSorry.java
+javac BetterSafe.java
 javac UnsafeMemory.java
 echo "Synchronized"
 java UnsafeMemory Synchronized 16 100000 100 10 20 30 40 50
