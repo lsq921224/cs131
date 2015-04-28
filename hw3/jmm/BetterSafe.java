@@ -27,15 +27,15 @@ class BetterSorry implements State
 	
 	public boolean swap(int i, int j)
 	{
-		if (value[i] <= 0 || value[j] >= maxval)
-			return false;
 		lock.lock();
-		try {
-			value[i]--;
-			value[j]++;
-		} finally {
+		if (value[i] <= 0 || value[j] >= maxval)
+		{
 			lock.unlock();
+			return false;
 		}
+		value[i]--;
+		value[j]++;
+		lock.unlock();
 		return true;
 	}
 }
