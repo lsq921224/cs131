@@ -5,19 +5,25 @@ class BetterSorry implements State
 	private byte[] value;
 	private byte maxval;
 
-	private ReentrantLock lock;
+	private ReentrantLock[] locks;
 	
 	BetterSorry(byte[] v)
 	{
 		value = v;
 		maxval = 127;
-		lock = new ReentrantLock();
+		locks = new ReentrantLock[v.length];
+		for(int i=0; i<v.length; i++) {
+			locks[i] = new ReentrantLock();
+		}	
 	}
 
 	BetterSorry(byte[] v, byte m) {
 		value = v;
 		maxval = m;
-		lock = new ReentrantLock();
+		locks = new ReentrantLock[v.length];
+		for(int i=0; i<v.length; i++) {
+			locks[i] = new ReentrantLock();
+		}	
 	}
 
 	
@@ -27,18 +33,13 @@ class BetterSorry implements State
 	
 	public boolean swap(int i, int j)
 	{
-		lock.lock();
 		if (value[i] <= 0 || value[j] >= maxval)
 		{
-			lock.unlock();
 			return false;
 		}
-		try
-		{
-		value[i]--;
-		value[j]++;
-		} finally {
-		lock.unlock();
+		if(locks[i].tryLock() && locks[j].tryLock()) {
+			value[i]--;
+			value[j]++;
 		}
 		return true;
 	}
