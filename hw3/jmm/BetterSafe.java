@@ -33,9 +33,13 @@ class BetterSorry implements State
 			lock.unlock();
 			return false;
 		}
+		try
+		{
 		value[i]--;
 		value[j]++;
+		} finally {
 		lock.unlock();
+		}
 		return true;
 	}
 }
