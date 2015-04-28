@@ -5,20 +5,18 @@ class BetterSafe implements State {
 	private byte maxval;
 
 	BetterSafe(byte[] v) {
-		AtomicInteger[] temp = new AtomicInteger[v.length];
+		value = new AtomicInteger[v.length];
 		for (int i=0; i < v.length; i++) {
-			temp[i] = new AtomicInteger(v[i]);
+			value[i] = new AtomicInteger(v[i]);
 		}
-		value = temp;
 		maxval = 127;
 	}
 
 	BetterSafe(byte[] v, byte m) {
-		AtomicInteger[] temp = new AtomicInteger[v.length];
+		value = new AtomicInteger[v.length];
 		for (int i=0; i < v.length; i++) {
-			temp[i] = new AtomicInteger(v[i]);
+			value[i] = new AtomicInteger(v[i]);
 		}
-		value = temp;
 		maxval = m;
 	}
 
