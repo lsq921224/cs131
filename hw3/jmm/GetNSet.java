@@ -7,8 +7,8 @@ class GetNSet implements State {
 	GetNSet(byte[] v)
 	{
 		int[] temp = new int[v.length];
-		for (int i : temp)
-			i = v[i];
+		for (int i = 0 ; i < temp.length; i++)
+			temp[i] = v[i];
 		value = new AtomicIntegerArray(temp);
 		maxval = 127;
 	}
