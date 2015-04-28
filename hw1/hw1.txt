@@ -1,0 +1,32 @@
+My subset function checks if the first item in a is in b, if so we recursively
+call subset on the remaining members of a with b.
+
+Equal_sets returns true if a is subset of b and b is a subset of a.
+
+Set_union appends items that are both in a and b to the result. To do
+so, we first check if a or is empty set, if so, we return the other list.
+Else we check if the first element of a is equal to the first element of b,
+if so we add it the set and call set_union on the remaining of a and b,
+else we add the first element of a to the list and call set_union on the
+remaining of a and the list b. Set_intersection and Set_diff are implemented
+in the similar pattern.
+
+In computed fixed point, if x equals f x, then we return x , otherwise we
+keep calling the function with f (f x).
+
+In computed periodic point, I decremented the period until its equal to 0
+to calculate the periodic point. If equal function passes, then we return the
+value, otherwise we recursively call computed periodic point with f (f x).
+
+The main idea of my filter_blind_alleys is to use  computed_fixed_point to 
+find the rules that can be derived to terminal symbols and then filter out the
+ rules that cannot by comparing the rules with the known good rules.
+
+To get the terminating rules, I have a function called update_terminal_rules,
+it takes two parameters, terminal_rules and rules. terminal_rules is 
+initially empty. We keep checking if rules can be derived to terminal rules
+by calling helper functions and then append valid rules to the list. After 
+getting the list, we can simply compare the original rules with them and 
+filter out invalid ones.
+
+

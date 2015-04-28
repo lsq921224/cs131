@@ -1,0 +1,18 @@
+Shengqian Liu 904 347 248
+
+Convert_grammar returns all rules that correspond to a given nonterminal.
+I use a helper function grammar_rule_list to create the list of rules matching
+the input nonterminal symbol. Then the returned homework 2 style grammar is
+the starting symbol tupled with the resulting helper function.
+
+I was trying to use the code from hint but I figured it is hard to adapt the code so I 
+decided to use mutual recursion to solve the parser problem. The or_matcher iterates 
+through the list of rules for a given non-terminal and match it with the fragment 
+by calling the and_matcher. If any rule fails, it moves on to the next until 
+all rules are checked. The and_matcher tries to completely match rules with the 
+fragment. When one rule is matched, it calls acceptor with the derivation and suffix.
+Unlike or_matcher, if any one rule does not match, the entire and_matcher fails.
+
+My implementation could potentially get stuck in an infinite loop if a non-terminal
+goes into the non-terminal it comes from. For example, Expr -> Expr; Binop; Term 
+will cause an infinite loop in my program.
