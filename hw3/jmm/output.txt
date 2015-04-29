@@ -78,3 +78,23 @@ BetterSafe
 Threads average 1694.85 ns/transition
 BetterSorry
 Threads average 606.334 ns/transition
+Synchronized
+Threads average 4796.21 ns/transition
+Unsynchronized
+Threads average 1070.45 ns/transition
+GetNSet
+Threads average 1623.85 ns/transition
+BetterSafe
+Threads average 1746.53 ns/transition
+BetterSorry
+Threads average 434.412 ns/transition
+Synchronized
+Threads average 4651.89 ns/transition
+Unsynchronized
+Threads average 1237.83 ns/transition
+GetNSet
+Threads average 1169.30 ns/transition
+BetterSafe
+Threads average 1798.81 ns/transition
+BetterSorry
+Threads average 569.631 ns/transition
