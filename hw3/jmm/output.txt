@@ -1,0 +1,80 @@
+Synchronized
+Threads average 4583.60 ns/transition
+Unsynchronized
+Threads average 1141.55 ns/transition
+GetNSet
+Threads average 1104.16 ns/transition
+BetterSafe
+Threads average 1717.99 ns/transition
+BetterSorry
+Threads average 561.716 ns/transition
+Synchronized
+Threads average 4803.96 ns/transition
+Unsynchronized
+Threads average 1035.66 ns/transition
+GetNSet
+Threads average 1505.46 ns/transition
+BetterSafe
+Threads average 1687.40 ns/transition
+BetterSorry
+Threads average 439.039 ns/transition
+Synchronized
+Threads average 4727.54 ns/transition
+Unsynchronized
+Threads average 1072.83 ns/transition
+GetNSet
+Threads average 1593.63 ns/transition
+BetterSafe
+Threads average 1725.00 ns/transition
+BetterSorry
+Threads average 595.049 ns/transition
+Synchronized
+Threads average 4710.60 ns/transition
+Unsynchronized
+Threads average 1105.82 ns/transition
+GetNSet
+Threads average 1156.94 ns/transition
+BetterSafe
+Threads average 1763.78 ns/transition
+BetterSorry
+Threads average 539.593 ns/transition
+Synchronized
+Threads average 4350.94 ns/transition
+Unsynchronized
+Threads average 1095.41 ns/transition
+GetNSet
+Threads average 1520.52 ns/transition
+BetterSafe
+Threads average 1736.13 ns/transition
+BetterSorry
+Threads average 526.472 ns/transition
+Synchronized
+Threads average 4430.60 ns/transition
+Unsynchronized
+Threads average 1118.24 ns/transition
+GetNSet
+Threads average 1147.06 ns/transition
+BetterSafe
+Threads average 1495.66 ns/transition
+BetterSorry
+Threads average 504.689 ns/transition
+Synchronized
+Threads average 4619.74 ns/transition
+Unsynchronized
+Threads average 1050.07 ns/transition
+GetNSet
+Threads average 1555.33 ns/transition
+BetterSafe
+Threads average 1717.03 ns/transition
+BetterSorry
+Threads average 441.735 ns/transition
+Synchronized
+Threads average 4617.29 ns/transition
+Unsynchronized
+Threads average 1096.71 ns/transition
+GetNSet
+Threads average 1539.93 ns/transition
+BetterSafe
+Threads average 1694.85 ns/transition
+BetterSorry
+Threads average 606.334 ns/transition
